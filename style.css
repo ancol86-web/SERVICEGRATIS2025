@@ -1,0 +1,277 @@
+/* Background & Overlay */
+.background-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.background-image-global {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay-global {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  color: white;
+  z-index: 1;
+  position: relative;
+}
+
+/* Reset */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+  text-align: justify;
+}
+
+h1, h2, h3 {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 20px;
+  color: #ffffff;
+}
+
+p, li {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+strong {
+  font-weight: 700;
+  font-family: 'Merriweather', serif;
+}
+
+a {
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: 'Merriweather', serif;
+}
+
+.hero-subtitle {
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+}
+
+.overlay {
+  text-align: center;
+  text-shadow: 2px 2px 6px black;
+}
+
+/* Logo Container */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+/* Ukuran dan gaya logo */
+.logo-bso {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-sg {
+  height: 200px;
+  width: 150px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Hover efek animasi */
+.logo-bso:hover {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.logo-sg:hover {
+  transform: scale(1.05) rotate(-5deg);
+}
+
+/* Responsive untuk layar kecil */
+@media (max-width: 600px) {
+  .logo-container {
+    flex-direction: column;
+  }
+
+  .logo-bso,
+  .logo-sg {
+    height: 100px;
+  }
+}
+
+/* Sections */
+.section {
+  margin: 40px 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Animasi */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Cards */
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s;
+  backdrop-filter: blur(4px);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Image */
+.foto-kecil {
+  width: 80%;
+  max-width: 500px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* WhatsApp Button */
+.whatsapp-link {
+  background-color: #25D366;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.whatsapp-link:hover {
+  background-color: #128C7E;
+}
+
+/* Footer */
+footer {
+  background-color: rgba(80, 79, 79, 0.85);
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 60px;
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+  font-size: 0.95rem;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .logo-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .container {
+    padding: 10px;
+  }
+}
+
+/* ✅ Tambahan styling untuk daftar syarat & ketentuan */
+.syarat-list {
+  list-style: decimal inside;
+  padding-left: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+}
+
+.section.animate h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
